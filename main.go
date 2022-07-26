@@ -32,6 +32,12 @@ func (g *Game) Layout(_, _ int) (w, h int) {
 }
 
 func main() {
+	for i, row := range boids.BoidMap {
+		for j := range row {
+			boids.BoidMap[i][j] = -1
+		}
+	}
+
 	for i := 0; i < boids.BoidCount; i++ {
 		boids.CreateBoid(i)
 	}
